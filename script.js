@@ -118,7 +118,10 @@ const loadingAnimation = () => {
     var childPart2 = document.querySelectorAll("#page4 .childPart2")
     let twoGoodLogo = document.querySelectorAll("#page6 #two-good-logo svg path")
     const timeline = gsap.timeline()
+
+
     let yValue = window.innerWidth <= 600 ? 100 : 100;
+    
     timeline.from("#nav .navParts .navItems", {
         delay: 0.1,
         y: -4,
@@ -149,34 +152,57 @@ const loadingAnimation = () => {
             end: "top-=40% end",
         }
     })
+    if (window.innerWidth<=600){
+        startValue1 = "top-=200% top"
+        startValue2 ="top-=280% top"
+        startValue3 =  "top-=530 top"
+        yValue = 20
+        let textArea = document.querySelectorAll("#page6 #page6-part1 ")
+        gsap.from(textArea,{
+            y:20,
+            opacity:0,
+            scrollTrigger:{
+                trigger:"textArea",
+                scroller:"#main",
+                // markers:true,
+                start:startValue3,
+                end:"end end",
+                stagger:0.3,
+            }
+        })
+    }
+    else if (window.innerWidth > 600){
+        startValue1 = "top-=60% top"
+        startValue2 = "top-=80% top"
+        startValue3 =  "top-=500% top"
+    }
 
     gsap.from(childPart1, {
         opacity: 0,
-        y: 100,
+        y: yValue,
+        y:40,
         stagger: 0.4,
         scrollTrigger: {
             trigger: childPart1,
             scroller: "#main",
-            start: "top-=60% top",
+            start:startValue1,
             end: "bottom+=100% center",
             // markers: true,
         }
     })
-
     gsap.from(childPart2, {
         opacity: 0,
-        y: 100,
+        y: yValue,
         stagger: 0.4,
-
         scrollTrigger: {
             trigger: childPart2,
             scroller: "#main",
-            start: "top-=80% top",
+            start: startValue2,
             end: "bottom+=100% center",
             // markers: true,
         }
     })
-
+    
     gsap.from(twoGoodLogo, {
         opacity: 0,
         rotate: -5,
@@ -185,16 +211,21 @@ const loadingAnimation = () => {
             trigger: twoGoodLogo,
             scroller: "#main",
             // markers:true,
-            start: "top-=500% top",
-            end: "end end"
+            start:startValue3,
+            end: "end end",
         }
     })
+
 
 };
 
 loadingAnimation();
-
+if (window.innerWidth<=600){
+    const cursor = document.querySelector("#cursor")
+    cursor.style.display = "none"
+}
 const cursorAnimation = () => {
+
     document.addEventListener("mousemove", function (dets) {
         gsap.to("#cursor", {
             top: dets.y,
