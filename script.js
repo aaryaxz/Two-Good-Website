@@ -64,7 +64,6 @@ function navbarAnimation() {
         scrollTrigger: {
             trigger: "#navPart1 #links",
             scroller: "#main",
-            // markers: true,
             start: "50px top",
             end: "55px 60px",
             scrub: 1
@@ -114,40 +113,86 @@ videoContainer.addEventListener("mouseleave", handleMouseLeave);
 videoContainer.addEventListener("mousemove", handleMouseMove);
 
 const loadingAnimation = () => {
+
+    var childPart1 = document.querySelectorAll("#page4 .childPart1")
+    var childPart2 = document.querySelectorAll("#page4 .childPart2")
+    let twoGoodLogo = document.querySelectorAll("#page6 #two-good-logo svg path")
     const timeline = gsap.timeline()
-    let yValue = window.innerWidth <= 600 ? 100:100;
-    timeline.from("#nav .navParts .navItems",{
-        delay:0.1,
-        y:-4,
-        opacity:0
+    let yValue = window.innerWidth <= 600 ? 100 : 100;
+    timeline.from("#nav .navParts .navItems", {
+        delay: 0.1,
+        y: -4,
+        opacity: 0
     })
-    timeline.from("#page1 #page1-word1 .wrapper",{
-        transform:`translateY(${yValue}%)`,
-        opacity:0,
+    timeline.from("#page1 #page1-word1 .wrapper", {
+        transform: `translateY(${yValue}%)`,
+        opacity: 0,
     })
-    timeline.from("#page1 #page1-word2 .wrapper",{
-        transform:`translateY(${yValue}%)`,
-        opacity:0,
+    timeline.from("#page1 #page1-word2 .wrapper", {
+        transform: `translateY(${yValue}%)`,
+        opacity: 0,
     })
     gsap.from("#page1 #video-container", {
         opacity: 0,
         delay: 1,
         duration: 0.6,
     });
-    gsap.from("#main .elements",{
-        // opacity:0,
-        scrollTrigger:{
-            trigger:".elements",
-            scroller:"body",
-            markers:true,
-            start:"80% top",
-            end:"top end"
+    gsap.from("#main .elements", {
+        opacity: 0,
+        stagger: 0.3,
+        y: 20,
+        scrollTrigger: {
+            trigger: ".elements",
+            scroller: "#main",
+            // markers: true,
+            start: "top-=50% top",
+            end: "top-=40% end",
         }
     })
+
+    gsap.from(childPart1, {
+        opacity: 0,
+        y: 100,
+        stagger: 0.4,
+        scrollTrigger: {
+            trigger: childPart1,
+            scroller: "#main",
+            start: "top-=60% top",
+            end: "bottom+=100% center",
+            // markers: true,
+        }
+    })
+
+    gsap.from(childPart2, {
+        opacity: 0,
+        y: 100,
+        stagger: 0.4,
+
+        scrollTrigger: {
+            trigger: childPart2,
+            scroller: "#main",
+            start: "top-=80% top",
+            end: "bottom+=100% center",
+            // markers: true,
+        }
+    })
+
+    gsap.from(twoGoodLogo, {
+        opacity: 0,
+        rotate: -5,
+        stagger: 0.2,
+        scrollTrigger: {
+            trigger: twoGoodLogo,
+            scroller: "#main",
+            // markers:true,
+            start: "top-=500% top",
+            end: "end end"
+        }
+    })
+
 };
 
 loadingAnimation();
-
 
 const cursorAnimation = () => {
     document.addEventListener("mousemove", function (dets) {
@@ -215,7 +260,7 @@ const textAnimation = () => {
         texts.addEventListener("mouseleave", function () {
             underline.style.transformOrigin = "right"
             underline.style.transform = "scaleX(0)"
-            underline.style.backgroundColor = "black"
+            underline.style.backgroundColor = "rgb(139, 139, 139)"
         })
     });
 
@@ -253,18 +298,18 @@ menuIcon.addEventListener("click", function () {
             part.classList.add("menuNav")
         })
         // condition ? expressionIfTrue : expressionIfFalse
-        let yValue = window.innerWidth <= 600 ? -31:-70
+        let yValue = window.innerWidth <= 600 ? -31 : -70
 
         gsap.to("#menuPart2 .title .wrapper", {
-            y:yValue,
+            y: yValue,
             delay: 0.1,
-            visibility:"visible",
+            visibility: "visible",
         })
-        gsap.from("#menuPart1 .menuPart-boxes",{
-            opacity:0,
-            delay:0.3,
-            y:20,
-            stagger:-0.2,
+        gsap.from("#menuPart1 .menuPart-boxes", {
+            opacity: 0,
+            delay: 0.3,
+            y: 20,
+            stagger: -0.2,
         })
     }
     else if (menuPage.classList.contains("menuPage-open")) {
@@ -281,7 +326,7 @@ menuIcon.addEventListener("click", function () {
         })
         gsap.to("#menuPart2 .title .wrapper", {
             y: 0,
-            visibility:"hidden"
+            visibility: "hidden"
         })
 
     }
@@ -289,22 +334,22 @@ menuIcon.addEventListener("click", function () {
 
 
 let titles = document.querySelectorAll("#menuPart2 .title h1")
-let underlineSvgAnimation= function(titles){
+let underlineSvgAnimation = function (titles) {
     // console.log(titles) here the titles are stored in nodeList that's why we cannot use directly the css properties(titles.style) we have to use loops here.
-    titles.forEach(title=> {
-        title.addEventListener("mouseenter",function(){
+    titles.forEach(title => {
+        title.addEventListener("mouseenter", function () {
             let svgElement = this.closest(".title").nextElementSibling.querySelector("svg")
-            if(svgElement){
-                svgElement.style.transform="scaleX(1)"
-                svgElement.style.transformOrigin="left"
+            if (svgElement) {
+                svgElement.style.transform = "scaleX(1)"
+                svgElement.style.transformOrigin = "left"
             }
         })
-        title.addEventListener("mouseleave",function(){
+        title.addEventListener("mouseleave", function () {
             let svgElement = this.closest(".title").nextElementSibling.querySelector("svg")
-            if(svgElement){
+            if (svgElement) {
                 console.log(svgElement)
-                svgElement.style.transform="scaleX(0)"
-                svgElement.style.transformOrigin="right"
+                svgElement.style.transform = "scaleX(0)"
+                svgElement.style.transformOrigin = "right"
             }
         })
     })

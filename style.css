@@ -60,6 +60,7 @@ nav {
 }
 
 nav .navParts {
+    /* border: 1px solid orange; */
     position: relative;
     z-index: 100;
 }
@@ -134,14 +135,17 @@ a {
     justify-content: center;
     margin-top: 10vw;
 }
-#menuPart2 .title{
+
+#menuPart2 .title {
     text-align: end;
     height: 70px;
     overflow: hidden;
 }
-.title .wrapper1{
+
+.title .wrapper1 {
     opacity: 0;
 }
+
 .title h1 {
     position: relative;
     color: white;
@@ -152,6 +156,7 @@ a {
     display: block;
     cursor: pointer;
 }
+
 #menuPart2 .underlineSvg {
     position: relative;
     height: auto;
@@ -159,8 +164,9 @@ a {
     justify-content: end;
     /* background-color: red; */
 }
+
 .underlineSvg svg {
-    
+
     height: 10px;
     width: auto;
     display: inline;
@@ -172,13 +178,16 @@ a {
 #shop-underlineSvg {
     width: 90%;
 }
+
 #wholesale-underlineSvg svg {
     height: 13px;
-  
+
 }
+
 #wholesale-underlineSvg {
     width: 85%;
 }
+
 #catering-underlineSvg {
     width: 81%;
 }
@@ -314,15 +323,15 @@ nav #navPart2 {
 }
 
 #icons svg {
-    /* border: 1px solid black; */
+    /* border: 1px solid red; */
     cursor: pointer;
     transition: transform 0.2s;
-    transform: rotate(0deg);
+    transform: rotate(0deg) !important;
     margin-top: 2px;
 }
 
 #icons svg:hover {
-    transform: rotate(-7deg);
+    transform: rotate(-7deg) !important;
 }
 
 #navPart2 #links {
@@ -356,6 +365,7 @@ nav #navPart2 {
     background-color: black;
     transform: scaleX(0);
     transition: transform 0.5s;
+    /* border: 1px solid rgb(87, 87, 87); */
 }
 
 #page1 {
@@ -366,27 +376,26 @@ nav #navPart2 {
     padding-top: 13vw;
     position: relative;
 }
-/* #page1 .wrapper1{
-    opacity: 0;
-} */
-#page1 #page1-word1{
+
+#page1 #page1-word1 {
     /* background-color: red; */
     height: 280px;
     overflow: hidden;
-  
+
 }
-#page1-word1 .wrapper{
+
+#page1-word1 .wrapper {
     transform: translateY(0);
 }
 
-#page1 #page1-word2{
+#page1 #page1-word2 {
     /* background-color: rgb(0, 123, 255); */
     height: 280px;
     overflow: hidden;
-  
+
 }
 
-#page1-word2 .wrapper{
+#page1-word2 .wrapper {
     transform: translateY(0);
 }
 
@@ -435,13 +444,13 @@ nav #navPart2 {
     align-items: center;
     justify-content: space-between;
     padding: 3vw 1vw;
+    /* background-color: red; */
 }
 
 #page2 .elem {
     position: relative;
     width: 31%;
     height: 100%;
-    /* background-color: red; */
     overflow: hidden;
     display: flex;
     align-items: flex-end;
@@ -558,6 +567,7 @@ nav #navPart2 {
     width: 100%;
     height: 100%;
     scale: 1.2;
+
 }
 
 #page3 {
@@ -867,9 +877,11 @@ span {
 h4 {
     text-align: start;
 }
-#nitty-gritties h4{
+
+#nitty-gritties h4 {
     padding-left: 5px;
 }
+
 #page6-part3 {
     /* border: 1px solid black; */
     padding: 0 17vw;
@@ -881,6 +893,148 @@ h4 {
 
 #page6-part3 h4 {
     display: none;
+}
+
+@media (max-width:1600px) {
+
+    #menuPage #menuPart1 {
+        margin-top: 29vw;
+        /* border: 1px solid white; */
+        display: flex;
+        justify-content: space-between;
+        width: 50%;
+    }
+
+
+    #menuPart2 .title {
+        height: 45px;
+    }
+
+    .title h1 {
+        font-size: 3.5vw;
+        line-height: 60px;
+    }
+
+    .underlineSvg svg {
+        height: 8px;
+    }
+
+    #shop-underlineSvg {
+        width: 95%;
+    }
+
+    #wholesale-underlineSvg svg {
+        height: 9px;
+
+    }
+
+    #wholesale-underlineSvg {
+        width: 80%;
+    }
+
+    #catering-underlineSvg {
+        width: 81%;
+    }
+
+    #catering-underlineSvg svg {
+        height: 9px;
+    }
+
+    #imapct-underlineSvg {
+        width: 94%;
+    }
+
+    #stories-underlineSvg {
+        width: 90%;
+    }
+
+    #about-underlineSvg {
+        width: 94%;
+    }
+
+    #contact-underlineSvg {
+        width: 85%;
+    }
+
+    #donate-underlineSvg {
+        width: 90%;
+    }
+
+    #signIn-underlineSvg {
+        width: 90%;
+    }
+
+    #page1 #page1-word1 {
+        height: 210px;
+    }
+    #page1 #page1-word2 {
+        height: 210px;
+    }
+    #page1 h1 {
+        font-size: 16vw;
+        line-height: 13.5vw;
+        letter-spacing: -10px;
+    }
+    #page1 #video-container {
+        margin-top: 1vw;
+    }
+    #page2 {
+        padding: 3vw 1.5vw;
+    }
+    #page2 .elem {
+        width: 32.5%;
+    }
+    .dets-container .dets {
+        width: 65%;
+    }
+    .dets .itemsHeading {
+        gap: 3.4vw;
+    }
+    #page3 #text1 {
+        width: 50%;
+    }
+    #text1 h1 {
+        font-size: 3.5vw;
+        line-height: 55px;
+        font-family: futura;
+    }
+    #page3 {
+        min-height: 50vh;
+    }
+    #page3 #text2 {
+        padding-right: 10.7vw;
+    } 
+    #text2 p {
+        line-height: 24px;
+    }
+    #text2 p:nth-child(2) {
+        margin: 35px 0px;
+    }
+    #page5 #page5-part1 {
+        /* border:1px solid rgb(21, 0, 255) ; */
+        width: 35%;
+        height: 30vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    #page5-part1 h1 {
+        font-size: 1.5vw;
+    }
+
+    #page5-part1 button::after {
+        height: 0.5px;
+    }
+    #page6 {
+      padding-bottom: 2vw;
+    }
+    
+    #page6 textarea {
+        padding-top: 2.5vw;
+
+    }
+        
 }
 
 @media (max-width: 600px) {
@@ -895,7 +1049,7 @@ h4 {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
-        
+
     }
 
     nav #menuPage {
@@ -916,14 +1070,14 @@ h4 {
         justify-content: baseline;
         padding: 0vw 3vw;
         padding-bottom: 1vw;
-        
+
     }
 
     #menuPage #menuPart1 {
         margin-top: 1vw;
         display: flex;
         gap: 7vw;
-        align-items:start;
+        align-items: start;
         width: 100%;
         height: 30%;
     }
@@ -931,27 +1085,30 @@ h4 {
     #menuPart1 .menuPart-boxes {
         display: flex;
         flex-direction: column;
-        /* width: 33%; */
+
         height: 50%;
 
     }
 
     #menuPage #menuPart2 {
-        /* border: 1px solid blue; */
+
         margin-top: 0vw;
         width: 100%;
         height: 60%;
         justify-content: end;
     }
-    #menuPart2 .title{
-        /* background-color: red; */
+
+    #menuPart2 .title {
+
         height: 34px;
     }
+
     #menuPart2 .underlineSvg {
         position: relative;
-        
-        /* background-color: red; */
+
+
     }
+
     .underlineSvg svg {
         height: 8px;
         width: auto;
@@ -969,44 +1126,48 @@ h4 {
         width: 5.5vw;
         height: 5.5vw;
     }
+
     #shop-underlineSvg {
         width: 100%;
     }
+
     #wholesale-underlineSvg svg {
         height: 8px;
-      
+
     }
-    #catering-underlineSvg{
+
+    #catering-underlineSvg {
         width: 87%;
     }
+
     #catering-underlineSvg svg {
         height: 8px;
     }
-    
+
     #imapct-underlineSvg {
         width: 98%;
     }
-    
+
     #stories-underlineSvg {
         width: 95%;
     }
-    
+
     #about-underlineSvg {
         width: 97%;
     }
-    
+
     #contact-underlineSvg {
         width: 90%;
     }
-    
+
     #donate-underlineSvg {
         width: 95%;
     }
-    
+
     #signIn-underlineSvg {
         width: 95%;
     }
-    
+
 
     nav #navPart1 {
         height: 67px;
@@ -1084,21 +1245,23 @@ h4 {
         padding: 0vw 4vw;
         padding-top: 60vw;
     }
-    #page1 #page1-word1{
+
+    #page1 #page1-word1 {
         /* background-color: rgb(0, 26, 255); */
         height: 60px;
         overflow: hidden;
         padding-top: 10px;
-        
-        
+
+
     }
-    
-    #page1 #page1-word2{
+
+    #page1 #page1-word2 {
         /* background-color: red; */
         height: 60px;
         overflow: hidden;
         padding-top: 10px;
     }
+
     #page1 h1 {
         font-size: 15vw;
         letter-spacing: -2px;
