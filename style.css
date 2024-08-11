@@ -278,6 +278,7 @@ nav #navPart1 {
 
 #navPart1 svg {
     display: block;
+    cursor: pointer;
 }
 
 nav #navPart2 {
@@ -804,6 +805,7 @@ span {
     padding-top: 1.3vw;
     resize: none;
     border-bottom: 1px solid rgb(165, 163, 163);
+    scrollbar-width: none;
 }
 
 textarea::placeholder {
@@ -847,6 +849,7 @@ textarea:focus::placeholder {
     transition: 0.3s;
 }
 
+
 .boxes a:hover {
     color: rgb(165, 163, 163);
 }
@@ -889,6 +892,10 @@ h4 {
     font-family: helvetica;
     margin-top: -120px;
     line-height: 25px;
+}
+
+#page6-part3  p{
+    color: rgb(58, 58, 58);
 }
 
 #page6-part3 h4 {
@@ -1033,6 +1040,9 @@ h4 {
     #page6 textarea {
         padding-top: 2.5vw;
 
+    }
+    #page6 #about-two-good-logo-1 a,span{
+        color: rgb(105, 105, 105);
     }
         
 }
@@ -1368,6 +1378,7 @@ h4 {
 
     #text2 p {
         line-height: 25px;
+        color: rgb(91, 91, 91);
         /*  */
     }
 
@@ -1468,6 +1479,7 @@ h4 {
         margin-right: 3%;
         line-height: 25px;
         margin-bottom: 35px;
+        color: #333;
     }
 
     #page5 #page5-part2 {
@@ -1579,6 +1591,9 @@ h4 {
         /* border: 1px solid red; */
         margin-bottom: 10px;
     }
+    #page6 {
+        padding-bottom: 0vw;
+      }
 
     #page6-part3 {
         /* border: 1px solid black; */
@@ -1587,6 +1602,7 @@ h4 {
         font-family: helvetica;
         margin-top: 0px;
         line-height: 22px;
+        color: #333;
     }
 
     #page6-part3 h4 {

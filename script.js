@@ -1,9 +1,3 @@
-// const scroll = new LocomotiveScroll({
-//     el: document.querySelector('#main'),
-//     smooth: true,
-//     smoothMobile: true
-// });
-
 
 function locomotiveAnimation() {
     gsap.registerPlugin(ScrollTrigger);
